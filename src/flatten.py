@@ -5,6 +5,10 @@ def is_flat(x: Any) -> bool:
     return isinstance(x, str) or not isinstance(x, Iterable)
 
 def flatten(nested: Iterable) -> Iterable:
+
+    if not isinstance(nested, Iterable):
+        raise TypeError("nested must be iterable")
+
     ret = []
     stack_to_append = []
     for val in nested:

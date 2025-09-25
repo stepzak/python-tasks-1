@@ -1,6 +1,9 @@
 from typing import Iterable
 
 def unique_preserve_order(obj: Iterable):
+    if not isinstance(obj, Iterable):
+        raise TypeError("obj must be iterable")
+
     ret = []
     for x in obj:
         if x not in ret:
